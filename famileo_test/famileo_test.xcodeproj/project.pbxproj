@@ -9,13 +9,21 @@
 /* Begin PBXBuildFile section */
 		F824B6912A8CFF9600C4981F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6902A8CFF9600C4981F /* AppDelegate.swift */; };
 		F824B6932A8CFF9600C4981F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6922A8CFF9600C4981F /* SceneDelegate.swift */; };
-		F824B6952A8CFF9600C4981F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6942A8CFF9600C4981F /* ViewController.swift */; };
+		F824B6952A8CFF9600C4981F /* CocktailSearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6942A8CFF9600C4981F /* CocktailSearchListViewController.swift */; };
 		F824B6982A8CFF9600C4981F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F824B6962A8CFF9600C4981F /* Main.storyboard */; };
 		F824B69A2A8CFF9700C4981F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F824B6992A8CFF9700C4981F /* Assets.xcassets */; };
 		F824B69D2A8CFF9700C4981F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F824B69B2A8CFF9700C4981F /* LaunchScreen.storyboard */; };
 		F824B6A82A8CFF9700C4981F /* famileo_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6A72A8CFF9700C4981F /* famileo_testTests.swift */; };
 		F824B6B22A8CFF9700C4981F /* famileo_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6B12A8CFF9700C4981F /* famileo_testUITests.swift */; };
 		F824B6B42A8CFF9700C4981F /* famileo_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6B32A8CFF9700C4981F /* famileo_testUITestsLaunchTests.swift */; };
+		F853DFD92A8D0AC000B952B0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFD82A8D0AC000B952B0 /* Coordinator.swift */; };
+		F853DFDB2A8D0BE400B952B0 /* CocktailSearchListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFDA2A8D0BE400B952B0 /* CocktailSearchListCoordinator.swift */; };
+		F853DFDD2A8D0CAE00B952B0 /* CocktailSearchListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFDC2A8D0CAE00B952B0 /* CocktailSearchListModel.swift */; };
+		F853DFE02A8D100800B952B0 /* Array+Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFDF2A8D100800B952B0 /* Array+Get.swift */; };
+		F853DFE22A8D111B00B952B0 /* CocktailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFE12A8D111B00B952B0 /* CocktailViewCell.swift */; };
+		F88751DA2A8D117E0090309C /* CocktailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F88751D92A8D117E0090309C /* CocktailViewCell.xib */; };
+		F88751DC2A8D12730090309C /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88751DB2A8D12730090309C /* Cocktail.swift */; };
+		F88751DF2A8D15760090309C /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88751DE2A8D15760090309C /* Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +47,7 @@
 		F824B68D2A8CFF9600C4981F /* famileo_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = famileo_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F824B6902A8CFF9600C4981F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F824B6922A8CFF9600C4981F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F824B6942A8CFF9600C4981F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F824B6942A8CFF9600C4981F /* CocktailSearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailSearchListViewController.swift; sourceTree = "<group>"; };
 		F824B6972A8CFF9600C4981F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F824B6992A8CFF9700C4981F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F824B69C2A8CFF9700C4981F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,14 @@
 		F824B6AD2A8CFF9700C4981F /* famileo_testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = famileo_testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F824B6B12A8CFF9700C4981F /* famileo_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = famileo_testUITests.swift; sourceTree = "<group>"; };
 		F824B6B32A8CFF9700C4981F /* famileo_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = famileo_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F853DFD82A8D0AC000B952B0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F853DFDA2A8D0BE400B952B0 /* CocktailSearchListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailSearchListCoordinator.swift; sourceTree = "<group>"; };
+		F853DFDC2A8D0CAE00B952B0 /* CocktailSearchListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailSearchListModel.swift; sourceTree = "<group>"; };
+		F853DFDF2A8D100800B952B0 /* Array+Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Get.swift"; sourceTree = "<group>"; };
+		F853DFE12A8D111B00B952B0 /* CocktailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailViewCell.swift; sourceTree = "<group>"; };
+		F88751D92A8D117E0090309C /* CocktailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CocktailViewCell.xib; sourceTree = "<group>"; };
+		F88751DB2A8D12730090309C /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
+		F88751DE2A8D15760090309C /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +115,15 @@
 		F824B68F2A8CFF9600C4981F /* famileo_test */ = {
 			isa = PBXGroup;
 			children = (
+				F88751DD2A8D15530090309C /* Models */,
+				F853DFE32A8D114200B952B0 /* CocktailViewCell */,
+				F853DFDE2A8D0FFA00B952B0 /* Utils */,
 				F824B6902A8CFF9600C4981F /* AppDelegate.swift */,
 				F824B6922A8CFF9600C4981F /* SceneDelegate.swift */,
-				F824B6942A8CFF9600C4981F /* ViewController.swift */,
+				F853DFD82A8D0AC000B952B0 /* Coordinator.swift */,
+				F853DFDC2A8D0CAE00B952B0 /* CocktailSearchListModel.swift */,
+				F824B6942A8CFF9600C4981F /* CocktailSearchListViewController.swift */,
+				F853DFDA2A8D0BE400B952B0 /* CocktailSearchListCoordinator.swift */,
 				F824B6962A8CFF9600C4981F /* Main.storyboard */,
 				F824B6992A8CFF9700C4981F /* Assets.xcassets */,
 				F824B69B2A8CFF9700C4981F /* LaunchScreen.storyboard */,
@@ -125,6 +147,32 @@
 				F824B6B32A8CFF9700C4981F /* famileo_testUITestsLaunchTests.swift */,
 			);
 			path = famileo_testUITests;
+			sourceTree = "<group>";
+		};
+		F853DFDE2A8D0FFA00B952B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F853DFDF2A8D100800B952B0 /* Array+Get.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F853DFE32A8D114200B952B0 /* CocktailViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F88751D92A8D117E0090309C /* CocktailViewCell.xib */,
+				F853DFE12A8D111B00B952B0 /* CocktailViewCell.swift */,
+			);
+			path = CocktailViewCell;
+			sourceTree = "<group>";
+		};
+		F88751DD2A8D15530090309C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F88751DB2A8D12730090309C /* Cocktail.swift */,
+				F88751DE2A8D15760090309C /* Search.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +281,7 @@
 			files = (
 				F824B69D2A8CFF9700C4981F /* LaunchScreen.storyboard in Resources */,
 				F824B69A2A8CFF9700C4981F /* Assets.xcassets in Resources */,
+				F88751DA2A8D117E0090309C /* CocktailViewCell.xib in Resources */,
 				F824B6982A8CFF9600C4981F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,8 +307,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F824B6952A8CFF9600C4981F /* ViewController.swift in Sources */,
+				F824B6952A8CFF9600C4981F /* CocktailSearchListViewController.swift in Sources */,
+				F88751DC2A8D12730090309C /* Cocktail.swift in Sources */,
+				F853DFE02A8D100800B952B0 /* Array+Get.swift in Sources */,
+				F853DFD92A8D0AC000B952B0 /* Coordinator.swift in Sources */,
+				F853DFDD2A8D0CAE00B952B0 /* CocktailSearchListModel.swift in Sources */,
 				F824B6912A8CFF9600C4981F /* AppDelegate.swift in Sources */,
+				F853DFDB2A8D0BE400B952B0 /* CocktailSearchListCoordinator.swift in Sources */,
+				F88751DF2A8D15760090309C /* Search.swift in Sources */,
+				F853DFE22A8D111B00B952B0 /* CocktailViewCell.swift in Sources */,
 				F824B6932A8CFF9600C4981F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -445,6 +501,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +530,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
