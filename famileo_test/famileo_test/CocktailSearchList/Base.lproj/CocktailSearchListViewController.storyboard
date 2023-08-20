@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,21 +9,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Cocktail Search List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="famileo_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CocktailSearchListViewController" id="BYZ-38-t0r" customClass="CocktailSearchListViewController" customModule="famileo_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recherche" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92i-am-69a">
-                                <rect key="frame" x="8" y="16" width="377" height="34"/>
+                                <rect key="frame" x="8.0000000000000142" y="75" width="247.33333333333337" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfQ-fJ-L94">
+                                <rect key="frame" x="271.33333333333331" y="74.666666666666671" width="105.66666666666669" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Recherche"/>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c0F-fc-shf"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tuH-92-Crt">
-                                <rect key="frame" x="0.0" y="66" width="393" height="786"/>
+                                <rect key="frame" x="8" y="125" width="377" height="693"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e8x-g6-IdT">
                                     <size key="itemSize" width="128" height="128"/>
@@ -37,21 +45,28 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tuH-92-Crt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5rm-sQ-gi1"/>
-                            <constraint firstItem="92i-am-69a" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="16" id="CMw-pG-VGW"/>
-                            <constraint firstAttribute="bottom" secondItem="tuH-92-Crt" secondAttribute="bottom" id="G6k-Pt-zqp"/>
-                            <constraint firstAttribute="trailing" secondItem="92i-am-69a" secondAttribute="trailing" constant="8" id="SzN-Gt-ECa"/>
-                            <constraint firstItem="tuH-92-Crt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cc1-VX-6EH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RfQ-fJ-L94" secondAttribute="trailing" constant="16" id="7sI-fI-JU1"/>
+                            <constraint firstItem="92i-am-69a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="CMw-pG-VGW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tuH-92-Crt" secondAttribute="bottom" id="G6k-Pt-zqp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tuH-92-Crt" secondAttribute="trailing" constant="8" id="PK8-Au-2ca"/>
+                            <constraint firstItem="RfQ-fJ-L94" firstAttribute="leading" secondItem="92i-am-69a" secondAttribute="trailing" constant="16" id="dVb-yZ-ZKA"/>
+                            <constraint firstItem="tuH-92-Crt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="hGO-ei-rvT"/>
                             <constraint firstItem="92i-am-69a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="nkM-zZ-SB0"/>
                             <constraint firstItem="tuH-92-Crt" firstAttribute="top" secondItem="92i-am-69a" secondAttribute="bottom" constant="16" id="qkI-Rd-NMY"/>
+                            <constraint firstItem="RfQ-fJ-L94" firstAttribute="centerY" secondItem="92i-am-69a" secondAttribute="centerY" id="vOR-Lh-ZPV"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="393" height="852"/>
+                    <connections>
+                        <outlet property="collectionView" destination="tuH-92-Crt" id="MRK-eM-2eO"/>
+                        <outlet property="searchButton" destination="RfQ-fJ-L94" id="FoT-hA-dxv"/>
+                        <outlet property="searchTextfield" destination="92i-am-69a" id="6re-9L-TnG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>

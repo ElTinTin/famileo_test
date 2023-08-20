@@ -21,7 +21,6 @@ protocol Coordinator {
 }
 
 extension Coordinator {
-
     func present(_ viewController: UIViewController, parameters: CoordinatorPresentationParameters = .init()) {
         guard let navigationController = self.navigationController else { return }
         

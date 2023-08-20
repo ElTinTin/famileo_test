@@ -8,22 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		F824B6912A8CFF9600C4981F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6902A8CFF9600C4981F /* AppDelegate.swift */; };
-		F824B6932A8CFF9600C4981F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6922A8CFF9600C4981F /* SceneDelegate.swift */; };
-		F824B6952A8CFF9600C4981F /* CocktailSearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6942A8CFF9600C4981F /* CocktailSearchListViewController.swift */; };
-		F824B6982A8CFF9600C4981F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F824B6962A8CFF9600C4981F /* Main.storyboard */; };
+		F824B6952A8CFF9600C4981F /* CocktailSearchList+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6942A8CFF9600C4981F /* CocktailSearchList+ViewController.swift */; };
+		F824B6982A8CFF9600C4981F /* CocktailSearchListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F824B6962A8CFF9600C4981F /* CocktailSearchListViewController.storyboard */; };
 		F824B69A2A8CFF9700C4981F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F824B6992A8CFF9700C4981F /* Assets.xcassets */; };
 		F824B69D2A8CFF9700C4981F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F824B69B2A8CFF9700C4981F /* LaunchScreen.storyboard */; };
 		F824B6A82A8CFF9700C4981F /* famileo_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6A72A8CFF9700C4981F /* famileo_testTests.swift */; };
 		F824B6B22A8CFF9700C4981F /* famileo_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6B12A8CFF9700C4981F /* famileo_testUITests.swift */; };
 		F824B6B42A8CFF9700C4981F /* famileo_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B6B32A8CFF9700C4981F /* famileo_testUITestsLaunchTests.swift */; };
 		F853DFD92A8D0AC000B952B0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFD82A8D0AC000B952B0 /* Coordinator.swift */; };
-		F853DFDB2A8D0BE400B952B0 /* CocktailSearchListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFDA2A8D0BE400B952B0 /* CocktailSearchListCoordinator.swift */; };
-		F853DFDD2A8D0CAE00B952B0 /* CocktailSearchListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFDC2A8D0CAE00B952B0 /* CocktailSearchListModel.swift */; };
+		F853DFDB2A8D0BE400B952B0 /* CocktailSearchList+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFDA2A8D0BE400B952B0 /* CocktailSearchList+Coordinator.swift */; };
+		F853DFDD2A8D0CAE00B952B0 /* CocktailSearchList+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFDC2A8D0CAE00B952B0 /* CocktailSearchList+Model.swift */; };
 		F853DFE02A8D100800B952B0 /* Array+Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFDF2A8D100800B952B0 /* Array+Get.swift */; };
 		F853DFE22A8D111B00B952B0 /* CocktailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DFE12A8D111B00B952B0 /* CocktailViewCell.swift */; };
 		F88751DA2A8D117E0090309C /* CocktailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F88751D92A8D117E0090309C /* CocktailViewCell.xib */; };
 		F88751DC2A8D12730090309C /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88751DB2A8D12730090309C /* Cocktail.swift */; };
 		F88751DF2A8D15760090309C /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88751DE2A8D15760090309C /* Search.swift */; };
+		F88751FD2A8F5DDC0090309C /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88751FC2A8F5DDC0090309C /* ServiceManager.swift */; };
+		F88752012A8F6EA20090309C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88752002A8F6EA20090309C /* Store.swift */; };
+		F88752032A8F6EC90090309C /* Store+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88752022A8F6EC90090309C /* Store+Keys.swift */; };
+		F88752052A8F6F2D0090309C /* Store+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88752042A8F6F2D0090309C /* Store+Notifications.swift */; };
+		F88752072A8F6FBB0090309C /* Store+Accessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88752062A8F6FBB0090309C /* Store+Accessors.swift */; };
+		F88752092A8F744D0090309C /* DependencyRespolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88752082A8F744D0090309C /* DependencyRespolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +51,8 @@
 /* Begin PBXFileReference section */
 		F824B68D2A8CFF9600C4981F /* famileo_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = famileo_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F824B6902A8CFF9600C4981F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F824B6922A8CFF9600C4981F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F824B6942A8CFF9600C4981F /* CocktailSearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailSearchListViewController.swift; sourceTree = "<group>"; };
-		F824B6972A8CFF9600C4981F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F824B6942A8CFF9600C4981F /* CocktailSearchList+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CocktailSearchList+ViewController.swift"; sourceTree = "<group>"; };
+		F824B6972A8CFF9600C4981F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CocktailSearchListViewController.storyboard; sourceTree = "<group>"; };
 		F824B6992A8CFF9700C4981F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F824B69C2A8CFF9700C4981F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F824B69E2A8CFF9700C4981F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,13 +62,19 @@
 		F824B6B12A8CFF9700C4981F /* famileo_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = famileo_testUITests.swift; sourceTree = "<group>"; };
 		F824B6B32A8CFF9700C4981F /* famileo_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = famileo_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F853DFD82A8D0AC000B952B0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		F853DFDA2A8D0BE400B952B0 /* CocktailSearchListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailSearchListCoordinator.swift; sourceTree = "<group>"; };
-		F853DFDC2A8D0CAE00B952B0 /* CocktailSearchListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailSearchListModel.swift; sourceTree = "<group>"; };
+		F853DFDA2A8D0BE400B952B0 /* CocktailSearchList+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CocktailSearchList+Coordinator.swift"; sourceTree = "<group>"; };
+		F853DFDC2A8D0CAE00B952B0 /* CocktailSearchList+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CocktailSearchList+Model.swift"; sourceTree = "<group>"; };
 		F853DFDF2A8D100800B952B0 /* Array+Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Get.swift"; sourceTree = "<group>"; };
 		F853DFE12A8D111B00B952B0 /* CocktailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailViewCell.swift; sourceTree = "<group>"; };
 		F88751D92A8D117E0090309C /* CocktailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CocktailViewCell.xib; sourceTree = "<group>"; };
 		F88751DB2A8D12730090309C /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		F88751DE2A8D15760090309C /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		F88751FC2A8F5DDC0090309C /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		F88752002A8F6EA20090309C /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		F88752022A8F6EC90090309C /* Store+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Keys.swift"; sourceTree = "<group>"; };
+		F88752042A8F6F2D0090309C /* Store+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Notifications.swift"; sourceTree = "<group>"; };
+		F88752062A8F6FBB0090309C /* Store+Accessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Accessors.swift"; sourceTree = "<group>"; };
+		F88752082A8F744D0090309C /* DependencyRespolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRespolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,16 +125,14 @@
 		F824B68F2A8CFF9600C4981F /* famileo_test */ = {
 			isa = PBXGroup;
 			children = (
+				F88751FF2A8F6E9A0090309C /* Store */,
 				F88751DD2A8D15530090309C /* Models */,
-				F853DFE32A8D114200B952B0 /* CocktailViewCell */,
 				F853DFDE2A8D0FFA00B952B0 /* Utils */,
+				F88751FE2A8F5E4C0090309C /* CocktailSearchList */,
+				F88751FC2A8F5DDC0090309C /* ServiceManager.swift */,
 				F824B6902A8CFF9600C4981F /* AppDelegate.swift */,
-				F824B6922A8CFF9600C4981F /* SceneDelegate.swift */,
 				F853DFD82A8D0AC000B952B0 /* Coordinator.swift */,
-				F853DFDC2A8D0CAE00B952B0 /* CocktailSearchListModel.swift */,
-				F824B6942A8CFF9600C4981F /* CocktailSearchListViewController.swift */,
-				F853DFDA2A8D0BE400B952B0 /* CocktailSearchListCoordinator.swift */,
-				F824B6962A8CFF9600C4981F /* Main.storyboard */,
+				F88752082A8F744D0090309C /* DependencyRespolver.swift */,
 				F824B6992A8CFF9700C4981F /* Assets.xcassets */,
 				F824B69B2A8CFF9700C4981F /* LaunchScreen.storyboard */,
 				F824B69E2A8CFF9700C4981F /* Info.plist */,
@@ -173,6 +181,29 @@
 				F88751DE2A8D15760090309C /* Search.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F88751FE2A8F5E4C0090309C /* CocktailSearchList */ = {
+			isa = PBXGroup;
+			children = (
+				F824B6962A8CFF9600C4981F /* CocktailSearchListViewController.storyboard */,
+				F824B6942A8CFF9600C4981F /* CocktailSearchList+ViewController.swift */,
+				F853DFDC2A8D0CAE00B952B0 /* CocktailSearchList+Model.swift */,
+				F853DFDA2A8D0BE400B952B0 /* CocktailSearchList+Coordinator.swift */,
+				F853DFE32A8D114200B952B0 /* CocktailViewCell */,
+			);
+			path = CocktailSearchList;
+			sourceTree = "<group>";
+		};
+		F88751FF2A8F6E9A0090309C /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				F88752002A8F6EA20090309C /* Store.swift */,
+				F88752062A8F6FBB0090309C /* Store+Accessors.swift */,
+				F88752022A8F6EC90090309C /* Store+Keys.swift */,
+				F88752042A8F6F2D0090309C /* Store+Notifications.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +313,7 @@
 				F824B69D2A8CFF9700C4981F /* LaunchScreen.storyboard in Resources */,
 				F824B69A2A8CFF9700C4981F /* Assets.xcassets in Resources */,
 				F88751DA2A8D117E0090309C /* CocktailViewCell.xib in Resources */,
-				F824B6982A8CFF9600C4981F /* Main.storyboard in Resources */,
+				F824B6982A8CFF9600C4981F /* CocktailSearchListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,16 +338,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F824B6952A8CFF9600C4981F /* CocktailSearchListViewController.swift in Sources */,
+				F88752072A8F6FBB0090309C /* Store+Accessors.swift in Sources */,
+				F824B6952A8CFF9600C4981F /* CocktailSearchList+ViewController.swift in Sources */,
 				F88751DC2A8D12730090309C /* Cocktail.swift in Sources */,
 				F853DFE02A8D100800B952B0 /* Array+Get.swift in Sources */,
+				F88752032A8F6EC90090309C /* Store+Keys.swift in Sources */,
 				F853DFD92A8D0AC000B952B0 /* Coordinator.swift in Sources */,
-				F853DFDD2A8D0CAE00B952B0 /* CocktailSearchListModel.swift in Sources */,
+				F88752092A8F744D0090309C /* DependencyRespolver.swift in Sources */,
+				F853DFDD2A8D0CAE00B952B0 /* CocktailSearchList+Model.swift in Sources */,
+				F88752052A8F6F2D0090309C /* Store+Notifications.swift in Sources */,
+				F88751FD2A8F5DDC0090309C /* ServiceManager.swift in Sources */,
+				F88752012A8F6EA20090309C /* Store.swift in Sources */,
 				F824B6912A8CFF9600C4981F /* AppDelegate.swift in Sources */,
-				F853DFDB2A8D0BE400B952B0 /* CocktailSearchListCoordinator.swift in Sources */,
+				F853DFDB2A8D0BE400B952B0 /* CocktailSearchList+Coordinator.swift in Sources */,
 				F88751DF2A8D15760090309C /* Search.swift in Sources */,
 				F853DFE22A8D111B00B952B0 /* CocktailViewCell.swift in Sources */,
-				F824B6932A8CFF9600C4981F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,12 +389,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F824B6962A8CFF9600C4981F /* Main.storyboard */ = {
+		F824B6962A8CFF9600C4981F /* CocktailSearchListViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F824B6972A8CFF9600C4981F /* Base */,
 			);
-			name = Main.storyboard;
+			name = CocktailSearchListViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		F824B69B2A8CFF9700C4981F /* LaunchScreen.storyboard */ = {
@@ -498,7 +534,7 @@
 				INFOPLIST_FILE = famileo_test/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -527,7 +563,7 @@
 				INFOPLIST_FILE = famileo_test/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
