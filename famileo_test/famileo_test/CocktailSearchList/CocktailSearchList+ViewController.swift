@@ -13,6 +13,7 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchTextfield: UITextField!
+    @IBOutlet weak var emptyCvImageView: UIImageView!
     @IBOutlet weak var searchButton: UIButton!
     
     var coordinator: CocktailSearchListCoordinator?
@@ -47,6 +48,8 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
         collectionView.collectionViewLayout = layout
         
         collectionView.reloadData()
+        
+        searchButton.tintColor = .orange
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +62,7 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
         model.searchCocktails(searchTextfield.text ?? "", completion: { [weak self] _ in
             self?.collectionViewContent = self?.model.cocktails ?? []
             self?.collectionView.reloadData()
+            self?.emptyCvImageView.isHidden = true
         })
     }
     
@@ -82,6 +86,11 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width / 2 - 8, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = model.cocktails.get(index: indexPath.row) else { return }
+        coordinator?.openDetail(item)
     }
 }
 

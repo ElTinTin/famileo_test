@@ -20,13 +20,14 @@ class CocktailViewCell: UICollectionViewCell {
     }
     
     func configureCell(_ model: Cocktail) {
-        do {
-            guard let url = URL(string: model.thumb?.replacingOccurrences(of: "\\", with: "") ?? "") else { return }
-            let data = try Data(contentsOf: url)
-            self.imageView.image = UIImage(data: data)
-        }
-        catch{
-            print(error)
+        if let url = URL(string: model.thumb?.replacingOccurrences(of: "\\", with: "") ?? "") {
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                guard let imageData = data else { return }
+                
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: imageData)
+                }
+            }.resume()
         }
         title.text = model.title ?? ""
         

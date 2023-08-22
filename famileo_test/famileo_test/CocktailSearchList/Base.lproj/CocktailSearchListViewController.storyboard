@@ -41,15 +41,22 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoCocktail" translatesAutoresizingMaskIntoConstraints="NO" id="BH7-kL-aJl">
+                                <rect key="frame" x="16" y="125.66666666666669" width="361" height="676.33333333333326"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BH7-kL-aJl" secondAttribute="bottom" constant="16" id="7IR-SV-gpw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RfQ-fJ-L94" secondAttribute="trailing" constant="16" id="7sI-fI-JU1"/>
                             <constraint firstItem="92i-am-69a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="CMw-pG-VGW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BH7-kL-aJl" secondAttribute="trailing" constant="16" id="F9q-r8-Ggr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tuH-92-Crt" secondAttribute="bottom" id="G6k-Pt-zqp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tuH-92-Crt" secondAttribute="trailing" constant="8" id="PK8-Au-2ca"/>
+                            <constraint firstItem="BH7-kL-aJl" firstAttribute="top" secondItem="RfQ-fJ-L94" secondAttribute="bottom" constant="16" id="ROy-Jg-r7S"/>
                             <constraint firstItem="RfQ-fJ-L94" firstAttribute="leading" secondItem="92i-am-69a" secondAttribute="trailing" constant="16" id="dVb-yZ-ZKA"/>
+                            <constraint firstItem="BH7-kL-aJl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eEu-Gg-Cp0"/>
                             <constraint firstItem="tuH-92-Crt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="hGO-ei-rvT"/>
                             <constraint firstItem="92i-am-69a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="nkM-zZ-SB0"/>
                             <constraint firstItem="tuH-92-Crt" firstAttribute="top" secondItem="92i-am-69a" secondAttribute="bottom" constant="16" id="qkI-Rd-NMY"/>
@@ -60,6 +67,7 @@
                     <size key="freeformSize" width="393" height="852"/>
                     <connections>
                         <outlet property="collectionView" destination="tuH-92-Crt" id="MRK-eM-2eO"/>
+                        <outlet property="emptyCvImageView" destination="BH7-kL-aJl" id="Tp4-MM-3No"/>
                         <outlet property="searchButton" destination="RfQ-fJ-L94" id="FoT-hA-dxv"/>
                         <outlet property="searchTextfield" destination="92i-am-69a" id="6re-9L-TnG"/>
                     </connections>
@@ -69,9 +77,14 @@
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemOrangeColor"/>
     <resources>
+        <image name="logoCocktail" width="1160" height="772"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
