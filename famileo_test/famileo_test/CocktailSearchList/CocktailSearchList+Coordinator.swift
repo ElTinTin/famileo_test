@@ -21,4 +21,10 @@ final class CocktailSearchListCoordinator: Coordinator {
         ctrl.coordinator = self
         present(ctrl)
     }
+    
+    func openDetail(_ model: Cocktail) {
+        let ctrl = CocktailDetailViewController.instantiate(model: CocktailDetailModel(model))
+        ctrl.coordinator = self
+        present(ctrl)
+    }
 }
