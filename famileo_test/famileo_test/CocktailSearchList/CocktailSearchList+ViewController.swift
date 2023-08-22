@@ -15,6 +15,7 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
     @IBOutlet weak var searchTextfield: UITextField!
     @IBOutlet weak var emptyCvImageView: UIImageView!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var numberOfResultLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     
     var coordinator: CocktailSearchListCoordinator?
@@ -52,6 +53,8 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
         
         searchButton.tintColor = .orange
         deleteButton.tintColor = .red
+        
+        numberOfResultLabel.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,6 +68,7 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
         self.collectionView.reloadData()
         self.emptyCvImageView.isHidden = false
         self.searchTextfield.text = ""
+        self.numberOfResultLabel.isHidden = true
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
@@ -74,6 +78,8 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
                 self?.collectionViewContent = self?.model.cocktails ?? []
                 self?.collectionView.reloadData()
                 self?.emptyCvImageView.isHidden = true
+                self?.numberOfResultLabel.isHidden = false
+                self?.numberOfResultLabel.text = self?.collectionViewContent.count ?? 0 > 1 ? "\(self?.collectionViewContent.count ?? 0) résultats" : "\(self?.collectionViewContent.count ?? 0) résultats"
             case .failure(let failure):
                 var title = ""
                 var message = ""
