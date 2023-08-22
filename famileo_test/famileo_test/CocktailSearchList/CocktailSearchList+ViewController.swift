@@ -15,6 +15,7 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
     @IBOutlet weak var searchTextfield: UITextField!
     @IBOutlet weak var emptyCvImageView: UIImageView!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     var coordinator: CocktailSearchListCoordinator?
     private var model: CocktailSearchListModel!
@@ -50,6 +51,7 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
         collectionView.reloadData()
         
         searchButton.tintColor = .orange
+        deleteButton.tintColor = .red
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,11 +60,29 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        self.collectionViewContent = []
+        self.collectionView.reloadData()
+        self.emptyCvImageView.isHidden = false
+        self.searchTextfield.text = ""
+    }
+    
     @IBAction func searchButtonTapped(_ sender: Any) {
-        model.searchCocktails(searchTextfield.text ?? "", completion: { [weak self] _ in
-            self?.collectionViewContent = self?.model.cocktails ?? []
-            self?.collectionView.reloadData()
-            self?.emptyCvImageView.isHidden = true
+        model.searchCocktails(searchTextfield.text ?? "", completion: { [weak self] result in
+            switch result {
+            case .success():
+                self?.collectionViewContent = self?.model.cocktails ?? []
+                self?.collectionView.reloadData()
+                self?.emptyCvImageView.isHidden = true
+            case .failure(let failure):
+                if failure == .noData {
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Dommage", message: "Votre recherche ne rencontre aucun résultat. Essayez autre chose", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                        self?.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
         })
     }
     
@@ -89,8 +109,7 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let item = model.cocktails.get(index: indexPath.row) else { return }
-        coordinator?.openDetail(item)
+        coordinator?.openDetail(model.cocktails, indexPath)
     }
 }
 

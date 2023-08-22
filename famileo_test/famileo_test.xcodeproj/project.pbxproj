@@ -133,15 +133,15 @@
 		F824B68F2A8CFF9600C4981F /* famileo_test */ = {
 			isa = PBXGroup;
 			children = (
+				F824B6902A8CFF9600C4981F /* AppDelegate.swift */,
+				F88751FC2A8F5DDC0090309C /* ServiceManager.swift */,
+				F853DFD82A8D0AC000B952B0 /* Coordinator.swift */,
+				F88752082A8F744D0090309C /* DependencyRespolver.swift */,
 				F88751FF2A8F6E9A0090309C /* Store */,
 				F88751DD2A8D15530090309C /* Models */,
 				F853DFDE2A8D0FFA00B952B0 /* Utils */,
 				F88751FE2A8F5E4C0090309C /* CocktailSearchList */,
 				F887520A2A948CFD0090309C /* CocktailDetail */,
-				F88751FC2A8F5DDC0090309C /* ServiceManager.swift */,
-				F824B6902A8CFF9600C4981F /* AppDelegate.swift */,
-				F853DFD82A8D0AC000B952B0 /* Coordinator.swift */,
-				F88752082A8F744D0090309C /* DependencyRespolver.swift */,
 				F824B6992A8CFF9700C4981F /* Assets.xcassets */,
 				F824B69B2A8CFF9700C4981F /* LaunchScreen.storyboard */,
 				F824B69E2A8CFF9700C4981F /* Info.plist */,

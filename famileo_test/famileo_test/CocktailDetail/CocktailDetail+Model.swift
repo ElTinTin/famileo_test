@@ -12,12 +12,16 @@ class CocktailDetailModel {
     var store: Store
     
     var cocktail: Cocktail?
+    var cocktails: [Cocktail]?
+    var index: Int?
     
-    init(_ cocktail: Cocktail) {
-        self.cocktail = cocktail
+    init(_ cocktails: [Cocktail], _ index: IndexPath) {
+        self.cocktail = cocktails.get(index: index.row)
+        self.cocktails = cocktails
+        self.index = index.row
     }
     
-    var ingredients: [String:String] {
+    func ingredients() -> [String:String] {
         var dictionary: [String: String] = [:]
         
         let ingredients: [String?] = [cocktail?.ingredient1, cocktail?.ingredient2, cocktail?.ingredient3, cocktail?.ingredient4, cocktail?.ingredient5, cocktail?.ingredient6, cocktail?.ingredient7, cocktail?.ingredient8, cocktail?.ingredient9, cocktail?.ingredient10, cocktail?.ingredient11, cocktail?.ingredient12, cocktail?.ingredient13, cocktail?.ingredient14, cocktail?.ingredient15]
@@ -30,5 +34,33 @@ class CocktailDetailModel {
         }
         
         return dictionary
+    }
+    
+    func didSwipeLeft() {
+        guard let currentIndex = self.index, let count = cocktails?.count else { return }
+        
+        let newIndex: Int
+        if currentIndex == count - 1 {
+            newIndex = 0
+        } else {
+            newIndex = currentIndex + 1
+        }
+        
+        self.index = newIndex
+        cocktail = cocktails?.get(index: newIndex)
+    }
+    
+    func didSwipeRight() {
+        guard let currentIndex = self.index, let count = cocktails?.count else { return }
+        
+        let newIndex: Int
+        if currentIndex == 0 {
+            newIndex = count - 1
+        } else {
+            newIndex = currentIndex - 1
+        }
+        
+        self.index = newIndex
+        cocktail = cocktails?.get(index: newIndex)
     }
 }
