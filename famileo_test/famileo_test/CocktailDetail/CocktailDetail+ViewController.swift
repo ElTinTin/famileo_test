@@ -38,7 +38,6 @@ class CocktailDetailViewController: UIViewController {
         coordinator?.navigationController = navigationController
         self.navigationController?.navigationBar.tintColor = .orange
         
-        // Add Swipe Gesture Recognizer
         self.view.addGestureRecognizer(createSwipeGestureRecognizer(for: .right))
         self.view.addGestureRecognizer(createSwipeGestureRecognizer(for: .left))
         
@@ -46,12 +45,10 @@ class CocktailDetailViewController: UIViewController {
     }
     
     private func createSwipeGestureRecognizer(for direction: UISwipeGestureRecognizer.Direction) -> UISwipeGestureRecognizer {
-        // Initialize Swipe Gesture Recognizer
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
-
-        // Configure Swipe Gesture Recognizer
+        
         swipeGestureRecognizer.direction = direction
-
+        
         return swipeGestureRecognizer
     }
     
@@ -59,13 +56,14 @@ class CocktailDetailViewController: UIViewController {
         switch sender.direction {
         case .left:
             model?.didSwipeLeft()
-            setupUI()
         case .right:
             model?.didSwipeRight()
-            setupUI()
         default:
             break
         }
+        UIView.transition(with: self.view, duration: 0.5, options: UIView.AnimationOptions.transitionCrossDissolve, animations: {
+            self.setupUI()
+        })
     }
     
     func setupUI() {

@@ -75,12 +75,18 @@ class CocktailSearchListViewController: UIViewController, UICollectionViewDelega
                 self?.collectionView.reloadData()
                 self?.emptyCvImageView.isHidden = true
             case .failure(let failure):
+                var title = ""
+                var message = ""
+                
                 if failure == .noData {
-                    DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Dommage", message: "Votre recherche ne rencontre aucun résultat. Essayez autre chose", preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                        self?.present(alert, animated: true, completion: nil)
-                    }
+                    title = "Dommage"
+                    message = "Votre recherche ne rencontre aucun résultat. Essayez autre chose"
+                }
+                
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self?.present(alert, animated: true, completion: nil)
                 }
             }
         })

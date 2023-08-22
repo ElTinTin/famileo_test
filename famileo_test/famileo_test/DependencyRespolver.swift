@@ -30,7 +30,7 @@ public final class DependencyResolver {
     private static let shared = DependencyResolver()
 
     private var dependencies: [Dependency.Name: Dependency] = [:]
-    private let dispatchQueue = DispatchQueue(label: "fr.maif.maif.dependencyResolver", qos: .userInitiated, attributes: .concurrent)
+    private let dispatchQueue = DispatchQueue(label: "fr.famileo.test.dependencyResolver", qos: .userInitiated, attributes: .concurrent)
 
     @discardableResult
     static public func register<T>(name: Dependency.Name, dependency: T) -> T where T: AnyObject {
