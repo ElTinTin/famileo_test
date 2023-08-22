@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="PzX-cj-aTq" customClass="CocktailViewCell" customModule="famileo_test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="392" height="333"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tjB-WW-JnM">
+                <rect key="frame" x="0.0" y="0.0" width="392" height="333"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DhU-19-kri">
+                        <rect key="frame" x="0.0" y="0.0" width="392" height="333"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rn3-tt-lEU">
+                                <rect key="frame" x="0.0" y="0.0" width="392" height="199.66666666666666"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Margarita" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWu-So-OgS">
+                                <rect key="frame" x="16" y="215.66666666666666" width="360" height="101.33333333333334"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rn3-tt-lEU" firstAttribute="top" secondItem="DhU-19-kri" secondAttribute="top" id="5kS-fb-1Wq"/>
+                            <constraint firstAttribute="bottom" secondItem="PWu-So-OgS" secondAttribute="bottom" constant="16" id="M3o-5B-qKY"/>
+                            <constraint firstAttribute="trailing" secondItem="rn3-tt-lEU" secondAttribute="trailing" id="RZy-JK-xm1"/>
+                            <constraint firstItem="rn3-tt-lEU" firstAttribute="leading" secondItem="DhU-19-kri" secondAttribute="leading" id="TFd-b3-pdy"/>
+                            <constraint firstAttribute="trailing" secondItem="PWu-So-OgS" secondAttribute="trailing" constant="16" id="aUy-uu-wR4"/>
+                            <constraint firstItem="PWu-So-OgS" firstAttribute="leading" secondItem="DhU-19-kri" secondAttribute="leading" constant="16" id="atj-gf-esB"/>
+                            <constraint firstItem="rn3-tt-lEU" firstAttribute="height" relation="lessThanOrEqual" secondItem="DhU-19-kri" secondAttribute="height" multiplier="0.6" id="lCH-gU-NUP"/>
+                            <constraint firstItem="PWu-So-OgS" firstAttribute="top" secondItem="rn3-tt-lEU" secondAttribute="bottom" constant="16" id="sCO-bQ-jqE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="DhU-19-kri" secondAttribute="bottom" id="FMb-LF-Ez4"/>
+                    <constraint firstItem="DhU-19-kri" firstAttribute="leading" secondItem="tjB-WW-JnM" secondAttribute="leading" id="ThS-sK-72I"/>
+                    <constraint firstAttribute="trailing" secondItem="DhU-19-kri" secondAttribute="trailing" id="dES-hs-v8S"/>
+                    <constraint firstItem="DhU-19-kri" firstAttribute="top" secondItem="tjB-WW-JnM" secondAttribute="top" id="eaq-5c-KAj"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="392" height="333"/>
+            <connections>
+                <outlet property="backView" destination="DhU-19-kri" id="u1y-Ul-CLd"/>
+                <outlet property="imageView" destination="rn3-tt-lEU" id="OeJ-Hh-S0M"/>
+                <outlet property="title" destination="PWu-So-OgS" id="dmW-AJ-SAF"/>
+            </connections>
+            <point key="canvasLocation" x="35.114503816793892" y="-82.74647887323944"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

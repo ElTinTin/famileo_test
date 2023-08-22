@@ -12,9 +12,13 @@ final class CocktailSearchListCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController?
     
-    func start() {
-        let ctrl = CocktailSearchListViewController.instantiate
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
     
-    
+    func start() {
+        let ctrl = CocktailSearchListViewController.instantiate(model: CocktailSearchListModel())
+        ctrl.coordinator = self
+        present(ctrl)
+    }
 }
