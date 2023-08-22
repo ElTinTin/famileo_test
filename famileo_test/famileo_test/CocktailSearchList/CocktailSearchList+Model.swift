@@ -23,9 +23,15 @@ class CocktailSearchListModel {
         return cocktails.count
     }
     
-    func searchCocktails(_ search: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        ServiceManager().fetchCocktails(search, completion: { _ in
-            completion(.success(()))
+    func searchCocktails(_ search: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+        ServiceManager().fetchCocktails(search, completion: { result in
+            switch result {
+            case .success():
+                completion(.success(()))
+            case .failure(let failure):
+                completion(.failure(failure))
+            }
+            
         })
     }
 }

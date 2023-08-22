@@ -15,6 +15,8 @@ class CocktailDetailViewController: UIViewController {
     @IBOutlet weak var glassTypeLabel: UILabel!
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var coordinator: CocktailSearchListCoordinator?
     private var model: CocktailDetailModel?
@@ -36,10 +38,40 @@ class CocktailDetailViewController: UIViewController {
         coordinator?.navigationController = navigationController
         self.navigationController?.navigationBar.tintColor = .orange
         
+        // Add Swipe Gesture Recognizer
+        self.view.addGestureRecognizer(createSwipeGestureRecognizer(for: .right))
+        self.view.addGestureRecognizer(createSwipeGestureRecognizer(for: .left))
+        
         setupUI()
     }
     
+    private func createSwipeGestureRecognizer(for direction: UISwipeGestureRecognizer.Direction) -> UISwipeGestureRecognizer {
+        // Initialize Swipe Gesture Recognizer
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+
+        // Configure Swipe Gesture Recognizer
+        swipeGestureRecognizer.direction = direction
+
+        return swipeGestureRecognizer
+    }
+    
+    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction {
+        case .left:
+            model?.didSwipeLeft()
+            setupUI()
+        case .right:
+            model?.didSwipeRight()
+            setupUI()
+        default:
+            break
+        }
+    }
+    
     func setupUI() {
+        pageControl.numberOfPages = model?.cocktails?.count ?? 0
+        pageControl.currentPage = model?.index ?? 0
+        
         if let url = URL(string: model?.cocktail?.thumb?.replacingOccurrences(of: "\\", with: "") ?? "") {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 guard let imageData = data else { return }
@@ -68,7 +100,11 @@ class CocktailDetailViewController: UIViewController {
         
         instructionsLabel.text = model?.cocktail?.instructions ?? ""
         
-        if let ingredients = model?.ingredients {
+        if let ingredients = model?.ingredients() {
+            for view in stackView.arrangedSubviews {
+                view.removeFromSuperview()
+            }
+            
             for (ingredient, measure) in ingredients {
                 let label = UILabel()
                 label.text = "\(ingredient) : \(measure)"
@@ -80,7 +116,7 @@ class CocktailDetailViewController: UIViewController {
                 stackView.addArrangedSubview(label)
             }
             
-            stackView.heightAnchor.constraint(equalToConstant: CGFloat(ingredients.count * 44 + (ingredients.count - 2) * 2)).isActive = true
+            stackViewHeight.constant = CGFloat(ingredients.count * 44 + (ingredients.count - 2) * 2)
         }
     }
 }

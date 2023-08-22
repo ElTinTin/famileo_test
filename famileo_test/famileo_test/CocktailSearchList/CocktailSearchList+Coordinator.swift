@@ -22,8 +22,8 @@ final class CocktailSearchListCoordinator: Coordinator {
         present(ctrl)
     }
     
-    func openDetail(_ model: Cocktail) {
-        let ctrl = CocktailDetailViewController.instantiate(model: CocktailDetailModel(model))
+    func openDetail(_ models: [Cocktail], _ index: IndexPath) {
+        let ctrl = CocktailDetailViewController.instantiate(model: CocktailDetailModel(models, index))
         ctrl.coordinator = self
         present(ctrl)
     }

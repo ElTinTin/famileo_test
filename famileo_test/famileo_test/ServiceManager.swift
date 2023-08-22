@@ -7,8 +7,13 @@
 
 import Foundation
 
+enum APIError: Error {
+    case noData
+    case httpError
+}
+
 class ServiceManager {
-    func fetchCocktails(_ search: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func fetchCocktails(_ search: String, completion: @escaping (Result<Void, APIError>) -> Void) {
         let store = DependencyResolver.resolve(name: .store, type: Store.self)
         
         guard let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=\(search)") else { return }
@@ -16,12 +21,13 @@ class ServiceManager {
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error {
                 print("Error with fetching cocktails: \(error)")
+                completion(.failure(.httpError))
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
-                print("Error with http response cocktails")
+                completion(.failure(.httpError))
                 return
             }
             
@@ -31,6 +37,8 @@ class ServiceManager {
                     store.cocktails = searchResult.drinks
                     completion(.success(()))
                 }
+            } else {
+                completion(.failure(.noData))
             }
         })
         task.resume()
